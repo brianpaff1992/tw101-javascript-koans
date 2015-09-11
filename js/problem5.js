@@ -34,3 +34,7 @@
  */
 
 // Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}

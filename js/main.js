@@ -14,6 +14,6 @@ $(document).ready(function() {
     countMoney([10, 20, 100]);
 
     // Problem 5
-    // call your problem 5 code here
+    advertisingTextReversal(["zara", "dhyaan", "dein"], ["mazarat", "chahenge"], ["attention", "please"]);
 
 });
