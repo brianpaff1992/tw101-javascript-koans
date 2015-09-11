@@ -27,3 +27,59 @@
 */
 
 // Write your JavaScript here
+
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+
+function countMoney(denominationsOfMoney)
+{
+    changeElementText("#notes", denominationsOfMoney.join(", "));
+
+
+    var total = getTotal(denominationsOfMoney);
+
+
+
+   changeElementText("#totalMoney", total);
+}
+
+function getTotal(denominationsOfMoney)
+{
+    var total = 0;
+
+    for(var i =0; i<denominationsOfMoney.length; i++)
+        {
+          var currentIndex = denominationsOfMoney[i];
+
+          if(!isPossibleDenomination(currentIndex))
+          {
+            break;
+          }
+          else
+          {
+            total += currentIndex;
+          }
+        }
+
+    return total;
+}
+function isPossibleDenomination(currency)
+{
+  var possibleCurrencies = [5, 10, 20, 50, 100, 500];
+
+  var counter = 0;
+
+  while(counter < possibleCurrencies.length)
+  {
+      if(currency == possibleCurrencies[counter])
+      {
+          return true;
+      }
+      counter++;
+  }
+
+  return false;
+}
