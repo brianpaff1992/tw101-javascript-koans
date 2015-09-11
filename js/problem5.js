@@ -38,3 +38,52 @@
 function changeElementText(element, answer) {
     $(element).text(answer);
 }
+
+function advertisingTextReversal(HindiText, UrduText, EnglishText)
+{
+
+    var hindiLine = createHtmlStringFromArrayOfText(HindiText);
+    var urduLine = createHtmlStringFromArrayOfText(UrduText);
+    var englishLine = createHtmlStringFromArrayOfText(EnglishText);
+
+    changeElementText("#HindiMistakeLine", hindiLine);
+    changeElementText("#UrduMistakeLine", urduLine);
+    changeElementText("#EnglishMistakeLine", englishLine);
+
+    urduLine = reverseLine(UrduText);
+
+    var correctedLine = hindiLine + urduLine + englishLine;
+
+    changeElementText("#correctLine", correctedLine);
+
+    var totalNumberOfWords = countWords(HindiText, UrduText, EnglishText);
+
+    changeElementText("#wordCount", totalNumberOfWords);
+
+}
+
+function createHtmlStringFromArrayOfText(array)
+{
+    var text = "";
+
+    for(var i = 0; i<array.length; i++)
+    {
+        text += array[i] + " ";
+    }
+
+    return text;
+}
+
+//Takes in an array of strings, returns a formatted line for use within the html
+function reverseLine(text)
+{
+    var reversedText = text.reverse();
+
+    reversedText = createHtmlStringFromArrayOfText(reversedText);
+    return reversedText;
+}
+
+function countWords(hindiText, urduText, englishText)
+{
+    return hindiText.length + urduText.length + englishText.length;
+}
