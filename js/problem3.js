@@ -41,7 +41,7 @@ function changeElementText(element, answer) {
 function fareForRide(distanceTraveled, timeWaiting, isNight) {
     changeElementText("#distanceTraveled", distanceTraveled);
     changeElementText("#timeWaiting", timeWaiting);
-    changeElementText("#nightOrDay", "day time");
+    changeElementText("#nightOrDay", "day ");
     var fare = "0";
 
     // write some code here!
@@ -84,7 +84,7 @@ function applyNightFee(isNight, fare)
         {
             var nightFee = fare / 2;
             fare += nightFee;
-            changeElementText("#nightOrDay", "night time");
+            changeElementText("#nightOrDay", "night ");
         }
 
         return fare;
